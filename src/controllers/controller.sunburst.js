@@ -28,7 +28,7 @@ Chart.defaults._set('sunburst', {
   },
 
   tooltips: {
-    enabled: false
+    enabled: true
   },
 
   scaleByMetric: null,

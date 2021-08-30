@@ -35,7 +35,7 @@
     },
 
     tooltips: {
-      enabled: false
+      enabled: true
     },
 
     scaleByMetric: null,
