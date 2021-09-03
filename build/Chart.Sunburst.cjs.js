@@ -7,7 +7,7 @@ var Chart = _interopDefault(require('chart.js'));
 var helpers = Chart.helpers;
 
 
-var MAX_NODE_DEPTH = 10;
+var MAX_NODE_DEPTH = 20;
 var MIN_RADIANS = 2 * Math.PI / (360 * 2);
 /**
  * Controller for the sunburst chart type
@@ -91,7 +91,7 @@ var SunburstController = (function (Chart$$1) {
 
       this.radius = Math.max((availableSize - this.borderWidth) / 2, 0);
 
-      var numRings = Math.min(7, this.maxDepth + 1);
+      var numRings = Math.min(6, this.maxDepth + 1);
       this.radiusStep = this.radius / numRings;
 
       this.centerX = (chartArea.left + chartArea.right) / 2;
@@ -302,14 +302,16 @@ var SunburstController = (function (Chart$$1) {
         valueOrDefault(custom.borderColor, index, elementOpts.borderColor)
       model.borderWidth = itemData.borderWidth ? itemData.borderWidth :
         valueOrDefault(custom.borderWidth, index, elementOpts.borderWidth)
+      model.borderAlign = itemData.borderAlign ? itemData.borderAlign :
+        valueOrDefault(custom.borderAlign, index, elementOpts.borderAlign)
 
       if (node.depth === 0) {
         model.outerRadius = 0;
       }
-      if (!node.isLeaf) {
-        model.borderColor = 'rgba(0, 0, 0, 1)';
-        model.borderWidth = 2
-      }
+      // if (!node.isLeaf) {
+      //   model.borderColor = 'rgba(0, 0, 0, 1)';
+      //   model.borderWidth = 2
+      // }
       arc.pivot();
     }
   });
