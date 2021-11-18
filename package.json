@@ -2,7 +2,7 @@
   "name": "chartjs-chart-sunburst-extend",
   "description": "Chart.js sunburst gauge",
   "main": "build/Chart.Sunburst.cjs.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Patrice Pominville <patrice.pominville@gmail.com>",
   "license": "MIT",
   "repository": {

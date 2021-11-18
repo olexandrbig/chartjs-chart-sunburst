@@ -91,7 +91,8 @@ var SunburstController = (function (Chart$$1) {
 
       this.radius = Math.max((availableSize - this.borderWidth) / 2, 0);
 
-      var numRings = Math.min(6, this.maxDepth + 1);
+      var numRings = meta.data.length > 30 ? Math.min(6, this.maxDepth + 1) : Math.min(10, this.maxDepth + 3);
+
       this.radiusStep = this.radius / numRings;
 
       this.centerX = (chartArea.left + chartArea.right) / 2;
